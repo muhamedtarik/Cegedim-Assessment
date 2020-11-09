@@ -1,0 +1,37 @@
+@mixin respond($breakpoint) {
+
+  @if $breakpoint == small-mobile {
+    @media only screen and (max-width: $small-mobile) { @content; } // 0 - 576px
+  }
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: $mobile) { @content; } // 0 - 767px
+  }
+
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: $tablet) { @content; } // 768px - 1280px
+  }
+
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: $desktop) { @content; } // 1281px - 1920px
+  }
+}
+
+
+@mixin respond-min($breakpoint) {
+
+  @if $breakpoint == small-mobile {
+    @media only screen and (min-width: $small-mobile) { @content; } // 0 - 576px
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (min-width: $mobile) { @content; } // 0 - 767px
+  }
+
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: $tablet) { @content; } // 768px - 1280px
+  }
+
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: $desktop) { @content; } // 1281px - 1920px
+  }
+}
